@@ -126,8 +126,8 @@ def sendTextToUser(requestData,resultData):
      # Create an SNS client
     sns = boto3.client(
          "sns",
-         aws_access_key_id= "AKIASLWK5M4DGC5UBHEB",
-         aws_secret_access_key="H7kIkXLxHEtjFwre4lOjnb/QHVvXAM3Y+xwYSQRN",
+         aws_access_key_id= "YOUR-ACCESS-KEY",
+         aws_secret_access_key="YOUR-SECRET-ACCESS-KEY",
          region_name="us-east-1"
     )
 
@@ -144,8 +144,8 @@ def sendTextToUser(requestData,resultData):
         print(response['MessageId'])
 def sendMailToUser(requestData, resultData):
 
-    SENDER = "ammarpathan@gmail.com"
-    RECIPIENT = "ammarpathan@gmail.com"
+    SENDER = "YOUR-EMAIL"
+    RECIPIENT = "YOUR-EMAIL"
     AWS_REGION = "us-east-1"
 
     SUBJECT = "Your Dining recommendations"
