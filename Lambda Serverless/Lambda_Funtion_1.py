@@ -154,7 +154,7 @@ def suggest_restaurant(intent_request):
     
     client = boto3.client('sqs')
     client.send_message(
-        QueueUrl='https://sqs.us-east-1.amazonaws.com/162560567046/chat-bot-queue', 
+        QueueUrl='SQS-QUEUE-URL', 
         MessageBody=preferences,
         MessageAttributes={
             'MessageType': {

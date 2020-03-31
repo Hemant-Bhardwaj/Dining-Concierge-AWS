@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     #sendTextToUser()
     print ("inside lambda handler")
     sqs = boto3.client('sqs')
-    queue_url = 'https://sqs.us-east-1.amazonaws.com/162560567046/chat-bot-queue'
+    queue_url = 'SQS-QUEUE-URL'
 
     # Receive message from SQS queue
     response = sqs.receive_message(
@@ -31,12 +31,12 @@ def lambda_handler(event, context):
         # restaurant original host
 
         
-        host = 'search-restaurant-g56zesqy2cp7vled5m5ivgpep4.us-east-1.es.amazonaws.com'
+        host = 'HOST-URL'
 
         region = 'us-east-1'
         service = 'es'
         credentials = boto3.Session().get_credentials()
-        awsauth = AWS4Auth('AKIASLWK5M4DGC5UBHEB','H7kIkXLxHEtjFwre4lOjnb/QHVvXAM3Y+xwYSQRN' , region, service)
+        awsauth = AWS4Auth('ACCESS-KEY','SECRET-ACCESS-KEY' , region, service)
 
         es = Elasticsearch(
             hosts = [{'host': host, 'port': 443}],
